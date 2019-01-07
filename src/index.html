@@ -136,37 +136,88 @@
     </section>
     <section class="questions">
         <div class="questions__inner">
-            <h2>Остались вопросы?</h2>
-            <a href="tel:+375296383575">+375 29 638 35 75</a>
+            <h2 class="questions__header">Остались вопросы?</h2>
+            <div class="phone">
+                <a href="tel:+375296383575" title="Наш номер телефона">+375 29 638 35 75</a>
+            </div>
             <div class="buttons__wrapper">
-                <a href="#" class="button">Бронирование</a>
-                <a href="#gallery" class="button button--primary">Галерея</a>
+                <a href="#" class="button button--primary button--booking">
+                    <span></span>Бронирование
+                </a><a href="#gallery" class="button button--gallery">Галерея<span></span></a>
             </div>
         </div>
     </section>
     <section class="address">
         <h2 class="visually-hidden">Наш график и адрес</h2>
         <div class="address__inner">
-            <div>
+            <div class="address__text">
                 <h3>График работы</h3>
                 <p>09:00 - 23:00</p>
                 <h3>Менеджер доступен</h3>
                 <p>10:00 - 21:00</p>
             </div>
-            <div>
+            <div class="address__text">
                 <h3>Контактные данные</h3>
-                <p>Адрес: <span>Волгоградская 8, ст.м. Московская</span></p>
-                <p>Телефон: <span>+37 529 638 35 75</span></p>
-                <p>Почта: <span>timestudio@gmail.com</span></p>
+                <ul>
+                    <li>Адрес: <span>Волгоградская 8, ст.м. Московская</span></li>
+                    <li>Телефон: <span>+37 529 638 35 75</span></li>
+                    <li>Почта: <span>timestudio@gmail.com</span></li>
+                </ul>
             </div>
-            <div>
+            <div class="map">
                 <img data-src="img/image.jpg" class="lazyload" alt="map">
+                <a href="#" class="button button--primary button--gallery">Проложить маршрут<span></span></a>
             </div>
         </div>
     </section>
 </main>
 <footer class="footer">
-    <span class="page-footer__copyright">© TIMESTUDIO, 2017−2019</span>
+    <div class="footer__inner">
+        <div class="footer__top">
+            <div class="logo">
+                <img src="img/logo.svg" alt="timestudio" width="160" height="22">
+            </div>
+            <nav class="nav__wrapper">
+                <ul class="nav">
+                    <li class="nav__item"><a href="#" class="nav__link">Предложение</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Галерея</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="phone">
+                <a href="tel:+375296383575" title="Наш номер телефона">+375 29 638 35 75</a>
+            </div>
+            <div class="social">
+                <a class="social__link vkontakte"
+                   href="https://vk.com/klonova.dance"
+                   target="_blank"
+                   rel="noopener"
+                   title="Наш Вконтакте"><span class="visually-hidden">Наша группа в ВК</span>
+                    <svg>
+                        <use href="img/sprites.svg#vkontakte"></use>
+                    </svg></a>
+                <a class="social__link facebook"
+                   href="https://www.facebook.com/klonova.dance/"
+                   target="_blank"
+                   rel="noopener"
+                   title="Наш Фэйсбук">
+                    <span class="visually-hidden">Наша страница на Facebook</span>
+                    <svg>
+                        <use href="img/sprites.svg#facebook"></use>
+                    </svg></a>
+                <a class="social__link instagram"
+                   href="https://www.instagram.com/dance_studio_minsk/"
+                   target="_blank"
+                   rel="noopener"
+                   title="Наш Инстаграм">
+                    <span class="visually-hidden">Наша страница в Instagram</span>
+                    <svg>
+                        <use href="img/sprites.svg#instagram"></use>
+                    </svg></a>
+            </div>
+        </div>
+        <span class="footer__copyright">© TIMESTUDIO, 2017−2019</span>
+    </div>
 </footer>
 </body>
 </html>
