@@ -6,6 +6,7 @@
 /* Content width*/
 :root {
     --contentWidth: 1132px;
+    --innerPadding: 0 10px;
 }
 
 /*Helpers*/
@@ -193,6 +194,7 @@ p {
     &__inner {
         max-width: var(--contentWidth);
         margin: 0 auto;
+        padding: var(--innerPadding);
     }
 
     &__top {
@@ -208,12 +210,14 @@ p {
     }
 }
 
+/*Offer*/
 .offer {
     padding: 75px 0 110px 0;
     background-color: var(--paletteColor5);
     &__inner {
         max-width: var(--contentWidth);
         margin: 0 auto;
+        padding: var(--innerPadding);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -229,3 +233,38 @@ p {
         }
     }
 }
+
+/*Gallery*/
+.gallery {
+    padding: 75px 0 110px 0;
+    &__inner {
+        max-width: var(--contentWidth);
+        margin: 0 auto;
+        padding: var(--innerPadding);
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-column-gap: 20px;
+    }
+    h2 {
+        grid-area: 1/ 1/ 2/ -1;
+        text-align: center;
+    }
+    .item--medium {
+        grid-column-end: span 6;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .item--small {
+        grid-column-end: span 4;
+        text-align: center;
+    }
+    img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    span {
+        font-size: 20px;
+    }
+}
+
+/*Header*/
