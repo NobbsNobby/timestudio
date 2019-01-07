@@ -1,0 +1,68 @@
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
+
+module.exports = {
+  entry: "./src/js/index.js",
+  mode: "development",
+  devtool: "source-map",
+  devServer: {
+    contentBase: path.join(__dirname, "src")
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env", "@babel/preset-flow"]
+            }
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              url: false
+            }
+          },
+          "postcss-loader"
+        ]
+      },
+      {
+        test: /\.(ttf|woff|woff2|eot)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              name: "[name].[ext]"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "src/index.html"
+    }),
+    new FriendlyErrorsWebpackPlugin()
+    // new HtmlWebpackPlugin({
+    //   filename: '404.html',
+    //   template: 'src/404.html',
+    // }),
+    // new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
+  ],
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/"
+  }
+};

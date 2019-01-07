@@ -1,0 +1,23 @@
+@import "normalize.css";
+@import "fonts.css";
+@import "media.css";
+@import "palette.css";
+
+/*@custom-selector :--heading h1, h2, h3, h4, h5, h6;*/
+/*
+.font {
+    font-smoothing: antialiased;
+}*/
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+.header {
+    background-color: var(--paletteColor4);
+    background-image: url("img/header-bg-compressed.jpg");
+}

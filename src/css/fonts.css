@@ -1,0 +1,10 @@
+/* @font-face {
+    font-family: Montserrat;
+    src: local('Montserrat-Thin'), url('../fonts/Montserrat-Thin.ttf');
+    font-weight: 300;
+  } */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-smoothing: antialiased;
+}
