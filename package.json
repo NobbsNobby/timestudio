@@ -44,6 +44,7 @@
   "dependencies": {
     "lazysizes": "^4.1.5",
     "normalize.css": "^8.0.1",
+    "postcss-color-function": "^4.0.1",
     "postcss-font-magician": "^2.2.1"
   }
 }

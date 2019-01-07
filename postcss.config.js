@@ -2,7 +2,7 @@ module.exports = {
   plugins: {
     "postcss-import": {},
     "postcss-font-smoothing": {},
-    'postcss-font-magician': {
+    "postcss-font-magician": {
       variants: {
         'Roboto': {
           '400': [],

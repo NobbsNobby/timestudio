@@ -1,8 +1,12 @@
 :root {
     --paletteColor1: #FFFFFF;
+    --paletteColor1-07: rgba(255,255,255, 0.7);
     --paletteColor2: #292929;
-    --paletteColor3: #C6C6C6; // footer text
-    --paletteColor4: #383838; // footer bg
-    --paletteColor5: #F7F7F7; // section bg
+    --paletteColor3: #C6C6C6;
+    --paletteColor4: #383838;
+    --paletteColor5: #F7F7F7;
     --paletteColor6: #FF4748;
+    --paletteColor6-02: rgba(255,71,72, 0.2);
+    --paletteColor6-05: rgba(255,71,72, 0.5);
+    --paletteColor7: #c72718;
 }

@@ -3,12 +3,12 @@
 @import "media.css";
 @import "palette.css";
 
-/*@custom-selector :--heading h1, h2, h3, h4, h5, h6;*/
-/*
-.font {
-    font-smoothing: antialiased;
-}*/
+/* Content width*/
+:root {
+    --contentWidth: 1132px;
+}
 
+/*Helpers*/
 .visually-hidden {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -17,7 +17,215 @@
     margin: -1px;
 }
 
+/*Logo*/
+.logo {
+}
+
+/*Phone*/
+.phone {
+    margin-right: 30px;
+
+    a {
+        font-size: 16px;
+        color: var(--paletteColor1);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--paletteColor6);
+        }
+
+        &:active {
+            color: var(--paletteColor7);;
+        }
+    }
+}
+
+/*Social*/
+.social {
+    &__link {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+
+        svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--paletteColor1);
+        }
+
+        &:hover {
+            svg {
+                fill: var(--paletteColor6);
+            }
+        }
+
+        &:active {
+            svg {
+                fill: var(--paletteColor7);
+            }
+        }
+    }
+}
+
+/*Button*/
+.buttons__wrapper {
+    display: flex;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    color: var(--paletteColor1);
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px var(--paletteColor1-07);
+    &:not(:first-child) {
+        margin-left: 20px;
+    }
+
+    &:hover {
+        box-shadow: inset 0 0 0 2px var(--paletteColor1);
+    }
+
+    &--primary {
+        background-color: var(--paletteColor6);
+        box-shadow: none;
+
+        &:hover {
+            background-color: var(--paletteColor7);
+            box-shadow: none;
+        }
+    }
+    span {
+        display: block;
+    }
+    &--booking {
+        span {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9 uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPS JldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04IDIuOTI5NjlDOC4yNzYxNCAyLjkyO TY5IDguNSAzLjE1MzU1IDguNSAzLjQyOTY5VjcuODM5NzdMMTAuOTA2OSAxMS4yMDk0QzExLjA2 NzQgMTEuNDM0MSAxMS4wMTUzIDExLjc0NjQgMTAuNzkwNiAxMS45MDY5QzEwLjU2NTkgMTIuMDY 3NCAxMC4yNTM2IDEyLjAxNTMgMTAuMDkzMSAxMS43OTA2TDcuNSA4LjE2MDIzVjMuNDI5NjlDNy 41IDMuMTUzNTUgNy43MjM4NiAyLjkyOTY5IDggMi45Mjk2OVoiIGZpbGw9IndoaXRlIi8+CjxwY XRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy45Mzc1IDE0 LjVDMTEuNTI3NCAxNC41IDE0LjQzNzUgMTEuNTg5OSAxNC40Mzc1IDhDMTQuNDM3NSA0LjQxMDE 1IDExLjUyNzQgMS41IDcuOTM3NSAxLjVDNC4zNDc2NSAxLjUgMS40Mzc1IDQuNDEwMTUgMS40Mz c1IDhDMS40Mzc1IDExLjU4OTkgNC4zNDc2NSAxNC41IDcuOTM3NSAxNC41Wk03LjkzNzUgMTUuN UMxMi4wNzk2IDE1LjUgMTUuNDM3NSAxMi4xNDIxIDE1LjQzNzUgOEMxNS40Mzc1IDMuODU3ODYg MTIuMDc5NiAwLjUgNy45Mzc1IDAuNUMzLjc5NTM2IDAuNSAwLjQzNzUgMy44NTc4NiAwLjQzNzU gOEMwLjQzNzUgMTIuMTQyMSAzLjc5NTM2IDE1LjUgNy45Mzc1IDE1LjVaIiBmaWxsPSJ3aGl0ZS IvPgo8L3N2Zz4=");
+        }
+    }
+
+    &--gallery {
+        span {
+            width: 12px;
+            height: 16px;
+            margin-left: 8px;
+            content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h 0PSIxNiIgdmlld0JveD0iMCAwIDEyIDE2IiBmaWxsPSJub25lIj4KPHBhdGggZmlsbC1ydWxlPS JldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMS4wNTMzIDEwLjUwNzRMNi4yODAzN SAxNS4yODAzQzUuOTg3NDYgMTUuNTczMiA1LjUxMjU5IDE1LjU3MzIgNS4yMTk2OSAxNS4yODAz TDAuNDQ2NzIxIDEwLjUwNzRDMC4xNTM4MjcgMTAuMjE0NSAwLjE1MzgyNyA5LjczOTU5IDAuNDQ 2NzIxIDkuNDQ2N0MwLjczOTYxNCA5LjE1MzgxIDEuMjE0NDkgOS4xNTM4MSAxLjUwNzM4IDkuND Q2N0w1LjAwMDAyIDEyLjkzOTNMNS4wMDAwMiAwLjVMNi41MDAwMiAwLjVMNi41MDAwMiAxMi45M zkzTDkuOTkyNjYgOS40NDY3QzEwLjI4NTYgOS4xNTM4MSAxMC43NjA0IDkuMTUzODEgMTEuMDUz MyA5LjQ0NjdDMTEuMzQ2MiA5LjczOTU5IDExLjM0NjIgMTAuMjE0NSAxMS4wNTMzIDEwLjUwNzR aIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4= ");
+        }
+    }
+}
+
+/*Navigation*/
+.nav {
+    display: flex;
+
+    &__wrapper {
+        margin-left: auto;
+    }
+
+    &__item {
+        list-style: none;
+    }
+
+    &__link {
+        font-size: 14px;
+        color: var(--paletteColor1);
+        text-decoration: none;
+        margin-right: 30px;
+
+        &:hover {
+            color: var(--paletteColor6);
+        }
+
+        &:active {
+            color: var(--paletteColor7);;
+        }
+    }
+}
+
+/*Text*/
+h1 {
+    max-width: 480px;
+    margin-bottom: 40px;
+    font-size: 48px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--paletteColor1);
+}
+h2 {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--paletteColor2);
+    margin-bottom: 2.5rem;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: var(--paletteColor2);
+    margin-bottom: 2rem;
+    cursor: default;
+}
+.text-marked {
+    padding: 3px 5px;
+    border-radius: 4px;
+    background-color: var(--paletteColor6-02);
+    cursor: pointer;
+    &:hover {
+        background-color: var(--paletteColor6-05);
+    }
+}
+
+/*Header*/
 .header {
-    background-color: var(--paletteColor4);
-    background-image: url("img/header-bg-compressed.jpg");
+    padding-top: 30px;
+    background: url("img/header-bg-compressed.jpg") center center no-repeat var(--paletteColor4);
+    background-size: cover;
+
+    &__inner {
+        max-width: var(--contentWidth);
+        margin: 0 auto;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 160px 0 245px 0;
+    }
+}
+
+.offer {
+    padding: 75px 0 110px 0;
+    background-color: var(--paletteColor5);
+    &__inner {
+        max-width: var(--contentWidth);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__text {
+        max-width: 380px;
+        flex-shrink: 0;
+    }
+    &__image {
+        margin-left: 10%;
+        object {
+            max-width: 100%;
+        }
+    }
 }

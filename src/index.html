@@ -20,18 +20,26 @@
             <div class="logo">
                 <img src="img/logo.svg" alt="timestudio" width="160" height="22">
             </div>
-            <nav>
-                <ul>
-                    <li>Предложение</li>
-                    <li>Галерея</li>
-                    <li>Контакты</li>
+            <nav class="nav__wrapper">
+                <ul class="nav">
+                    <li class="nav__item"><a href="#" class="nav__link">Предложение</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Галерея</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
                 </ul>
             </nav>
-            <div>
-                <a href="tel:+375296383575">+375 29 638 35 75</a>
+            <div class="phone">
+                <a href="tel:+375296383575" title="Наш номер телефона">+375 29 638 35 75</a>
             </div>
             <div class="social">
-                <a class="social__item facebook"
+                <a class="social__link vkontakte"
+                   href="https://vk.com/klonova.dance"
+                   target="_blank"
+                   rel="noopener"
+                   title="Наш Вконтакте"><span class="visually-hidden">Наша группа в ВК</span>
+                    <svg>
+                        <use href="img/sprites.svg#vkontakte"></use>
+                    </svg></a>
+                <a class="social__link facebook"
                    href="https://www.facebook.com/klonova.dance/"
                    target="_blank"
                    rel="noopener"
@@ -40,15 +48,7 @@
                     <svg>
                         <use href="img/sprites.svg#facebook"></use>
                     </svg></a>
-                <a class="social__item vkontakte"
-                   href="https://vk.com/klonova.dance"
-                   target="_blank"
-                   rel="noopener"
-                   title="Наш Вконтакте"><span class="visually-hidden">Наша группа в ВК</span>
-                    <svg>
-                        <use href="img/sprites.svg#vkontakte"></use>
-                    </svg></a>
-                <a class="social__item instagram"
+                <a class="social__link instagram"
                    href="https://www.instagram.com/dance_studio_minsk/"
                    target="_blank"
                    rel="noopener"
@@ -62,35 +62,38 @@
         <div class="header__content">
             <h1>Аренда помещений в центре Минска</h1>
             <div class="buttons__wrapper">
-                <a href="#" class="button">Бронирование</a>
-                <a href="#gallery" class="button button--primary">Галерея</a>
+                <a href="#" class="button button--booking">
+                    <span></span>Бронирование
+                </a><a href="#gallery" class="button button--primary button--gallery">Галерея<span></span></a>
             </div>
         </div>
     </div>
 </header>
 <main class="content">
     <section class="offer">
-        <div class="offer__text">
-            <h2>Наше предложение</h2>
-            <p>Два просторных <span class="-js-room-button text-marked">зала</span> с высокими потолками. Приятное
-                естественное освещение днем и отличное искусственное
-                вечером</p>
-            <p>Светлый и легкий <span class="-js-room-button text-marked">Карибы</span> отлично подойдет для занятий
-                йогой, лекций и групповых занятий. 
-                <span class="-js-room-button text-marked">Капучино</span> готов встретить фотографов и тех кому хочется
-                окунуться в классическую атмосферу.</p>
+        <div class="offer__inner">
+            <div class="offer__text -js-room-text">
+                <h2>Наше предложение</h2>
+                <p>Два просторных зала с высокими потолками. Приятное
+                    естественное освещение днем и отличное искусственное
+                    вечером</p>
+                <p>Светлый и легкий <span class="text-marked" data-name="white">Карибы</span> отлично подойдет для занятий
+                    йогой, лекций и групповых занятий. 
+                    <span class="text-marked" data-name="brown">Капучино</span> готов встретить фотографов и тех кому хочется
+                    окунуться в классическую атмосферу.</p>
 
-            <p>В каждом зале висят <span class="-js-room-button text-marked">зеркала</span> для занятий спортом, стоят
-                кулеры для воды и есть зоны отдыха где можно
-                расслабиться после утомительной тренировки.</p>
-            <p>Отдельные <span class="-js-room-button text-marked">раздевалки</span>, оборудованные зеркалами, позволят
-                спокойно подготовиться к началу мероприятия, а после
-                неспешно собраться.</p>
-        </div>
-        <div class="offer__image">
-            <object data="img/room.svg" type="image/svg+xml" class="-js-room">
-                Ваш браузер не поддерживает объекты
-            </object>
+                <p>В каждом зале висят <span class="text-marked">зеркала</span> для занятий спортом, стоят
+                    кулеры для воды и есть зоны отдыха где можно
+                    расслабиться после утомительной тренировки.</p>
+                <p>Отдельные <span class="text-marked" data-name="cloakroom">раздевалки</span>, оборудованные зеркалами, позволят
+                    спокойно подготовиться к началу мероприятия, а после
+                    неспешно собраться.</p>
+            </div>
+            <div class="offer__image">
+                <object data="img/room.svg" type="image/svg+xml" class="-js-room">
+                    Ваш браузер не поддерживает объекты
+                </object>
+            </div>
         </div>
     </section>
     <section class="gallery" id="gallery">
