@@ -19,30 +19,27 @@
 }
 
 /*Logo*/
-.logo {
-}
+/*.logo {
+}*/
 
 /*Phone*/
 .phone {
-    margin-right: 30px;
-
     a {
         font-size: 16px;
         color: var(--paletteColor1);
         text-decoration: none;
-
         &:hover {
             color: var(--paletteColor6);
         }
-
         &:active {
-            color: var(--paletteColor7);;
+            color: var(--paletteColor7);
         }
     }
 }
 
 /*Social*/
 .social {
+    margin-left: 30px;
     &__link {
         display: inline-block;
         width: 22px;
@@ -74,7 +71,7 @@
 }
 
 .button {
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 300px;
@@ -82,7 +79,6 @@
     color: var(--paletteColor1);
     text-decoration: none;
     text-transform: uppercase;
-    background-color: transparent;
     box-shadow: inset 0 0 0 2px var(--paletteColor1-07);
     &:not(:first-child) {
         margin-left: 20px;
@@ -91,7 +87,9 @@
     &:hover {
         box-shadow: inset 0 0 0 2px var(--paletteColor1);
     }
-
+    span {
+        display: block;
+    }
     &--primary {
         background-color: var(--paletteColor6);
         box-shadow: none;
@@ -101,18 +99,14 @@
             box-shadow: none;
         }
     }
-    span {
-        display: block;
-    }
     &--booking {
         span {
             width: 16px;
             height: 16px;
             margin-right: 8px;
-            content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9 uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPS JldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik04IDIuOTI5NjlDOC4yNzYxNCAyLjkyO TY5IDguNSAzLjE1MzU1IDguNSAzLjQyOTY5VjcuODM5NzdMMTAuOTA2OSAxMS4yMDk0QzExLjA2 NzQgMTEuNDM0MSAxMS4wMTUzIDExLjc0NjQgMTAuNzkwNiAxMS45MDY5QzEwLjU2NTkgMTIuMDY 3NCAxMC4yNTM2IDEyLjAxNTMgMTAuMDkzMSAxMS43OTA2TDcuNSA4LjE2MDIzVjMuNDI5NjlDNy 41IDMuMTUzNTUgNy43MjM4NiAyLjkyOTY5IDggMi45Mjk2OVoiIGZpbGw9IndoaXRlIi8+CjxwY XRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNNy45Mzc1IDE0 LjVDMTEuNTI3NCAxNC41IDE0LjQzNzUgMTEuNTg5OSAxNC40Mzc1IDhDMTQuNDM3NSA0LjQxMDE 1IDExLjUyNzQgMS41IDcuOTM3NSAxLjVDNC4zNDc2NSAxLjUgMS40Mzc1IDQuNDEwMTUgMS40Mz c1IDhDMS40Mzc1IDExLjU4OTkgNC4zNDc2NSAxNC41IDcuOTM3NSAxNC41Wk03LjkzNzUgMTUuN UMxMi4wNzk2IDE1LjUgMTUuNDM3NSAxMi4xNDIxIDE1LjQzNzUgOEMxNS40Mzc1IDMuODU3ODYg MTIuMDc5NiAwLjUgNy45Mzc1IDAuNUMzLjc5NTM2IDAuNSAwLjQzNzUgMy44NTc4NiAwLjQzNzU gOEMwLjQzNzUgMTIuMTQyMSAzLjc5NTM2IDE1LjUgNy45Mzc1IDE1LjVaIiBmaWxsPSJ3aGl0ZS IvPgo8L3N2Zz4=");
+            content: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDE1IDE1IiBmaWxsPSJub25lIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik03LjU2MjUgMi40Mjk2OUM3LjgzODY0IDIuNDI5NjkgOC4wNjI1IDIuNjUzNTUgOC4wNjI1IDIuOTI5NjlWNy4zMzk3N0wxMC40Njk0IDEwLjcwOTRDMTAuNjI5OSAxMC45MzQxIDEwLjU3NzggMTEuMjQ2NCAxMC4zNTMxIDExLjQwNjlDMTAuMTI4NCAxMS41Njc0IDkuODE2MTQgMTEuNTE1MyA5LjY1NTYzIDExLjI5MDZMNy4wNjI1IDcuNjYwMjNWMi45Mjk2OUM3LjA2MjUgMi42NTM1NSA3LjI4NjM2IDIuNDI5NjkgNy41NjI1IDIuNDI5NjlaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTcuNSAxNEMxMS4wODk5IDE0IDE0IDExLjA4OTkgMTQgNy41QzE0IDMuOTEwMTUgMTEuMDg5OSAxIDcuNSAxQzMuOTEwMTUgMSAxIDMuOTEwMTUgMSA3LjVDMSAxMS4wODk5IDMuOTEwMTUgMTQgNy41IDE0Wk03LjUgMTVDMTEuNjQyMSAxNSAxNSAxMS42NDIxIDE1IDcuNUMxNSAzLjM1Nzg2IDExLjY0MjEgMCA3LjUgMEMzLjM1Nzg2IDAgMCAzLjM1Nzg2IDAgNy41QzAgMTEuNjQyMSAzLjM1Nzg2IDE1IDcuNSAxNVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==");
         }
     }
-
     &--gallery {
         span {
             width: 12px;
@@ -146,7 +140,7 @@
         }
 
         &:active {
-            color: var(--paletteColor7);;
+            color: var(--paletteColor7);
         }
     }
 }
@@ -206,7 +200,7 @@ p {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 160px 0 245px 0;
+        padding: 145px 0 230px 0;
     }
 }
 
@@ -257,12 +251,14 @@ p {
     .item--small {
         grid-column-end: span 4;
         text-align: center;
-    }
-    img {
-        width: 100%;
-        margin-bottom: 10px;
+        img {
+            max-width: 100%;
+            border-radius: 4px;
+        }
     }
     span {
+        display: block;
+        margin-top: 10px;
         font-size: 20px;
     }
 }
@@ -365,6 +361,7 @@ p {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto 70px;
+    box-shadow: 10px 10px 25px 0 rgba(0,0,0,0.05);
     img {
         max-width: 100%;
         grid-area: 1 / 1/ 3/ -1;
