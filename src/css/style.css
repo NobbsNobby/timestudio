@@ -12,15 +12,20 @@
 /*Helpers*/
 .visually-hidden {
     position: absolute;
-    clip: rect(0 0 0 0);
     width: 1px;
     height: 1px;
     margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0,0,0,0);
+    clip-path: inset(100%);
 }
 
 /*Logo*/
-/*.logo {
-}*/
+.logo {
+    margin-right: auto;
+}
 
 /*Phone*/
 .phone {
@@ -120,11 +125,6 @@
 /*Navigation*/
 .nav {
     display: flex;
-
-    &__wrapper {
-        margin-left: auto;
-    }
-
     &__item {
         list-style: none;
     }
@@ -182,7 +182,7 @@ p {
 /*Header*/
 .header {
     padding-top: 30px;
-    background: url("img/header-bg-compressed.jpg") center center no-repeat var(--paletteColor4);
+    background: url("../img/header-bg-compressed.jpg") center center no-repeat var(--paletteColor4);
     background-size: cover;
 
     &__inner {
@@ -237,13 +237,14 @@ p {
         padding: var(--innerPadding);
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        grid-column-gap: 20px;
+        grid-column-gap: 1.1766%;
     }
     h2 {
         grid-area: 1/ 1/ 2/ -1;
         text-align: center;
     }
     .item--medium {
+        max-width: 100%;
         grid-column-end: span 6;
         text-align: center;
         margin-bottom: 30px;
@@ -290,7 +291,7 @@ p {
 /*Questions*/
 .questions {
     padding: 75px 0 110px 0;
-    background: url("img/questions-bg-compressed.jpg") center center no-repeat var(--paletteColor4);
+    background: url("../img/questions-bg-compressed.jpg") center center no-repeat var(--paletteColor4);
     background-size: cover;
     &__inner {
         max-width: var(--contentWidth);
@@ -361,15 +362,19 @@ p {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto 70px;
+    width: 100%;
+    min-height: 500px;
     box-shadow: 10px 10px 25px 0 rgba(0,0,0,0.05);
-    img {
-        max-width: 100%;
+    iframe {
+        width: 100%;
+        height: 100%;
         grid-area: 1 / 1/ 3/ -1;
     }
     .button {
         grid-area: 2/ 1/ -1/ 2;
         margin-left: 0;
         justify-self: center;
+        z-index: 1;
         span {
             transform: rotate(-90deg);
         }

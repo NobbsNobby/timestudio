@@ -7,6 +7,7 @@ export default function svgRoom() {
       const objDocument = obj.contentDocument;
       const svg = objDocument.querySelector('svg');
       buttons.addEventListener('click', (event) => {
+        console.log('click');
         const el = event.target;
         if (el.tagName === 'SPAN') {
           requestAnimationFrame(() => {
@@ -16,6 +17,7 @@ export default function svgRoom() {
 
       });
       buttons.addEventListener('mouseleave', () => {
+        console.log('leave');
         requestAnimationFrame(() => {
           svg.setAttribute('class', ``);
         });

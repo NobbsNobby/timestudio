@@ -1,10 +1,11 @@
 <svg width="1317" height="1014" viewBox="0 0 1317 1014" fill="none" xmlns="http://www.w3.org/2000/svg"
-     class="">
+     class="svg mirror">
     <style>
         .cloakroom .cloakroom--hide,
         .white .white--hide,
         .brown .brown--hide,
-        .rest .rest--hide {
+        .rest .rest--hide,
+        .mirror .mirror--hide {
         opacity: 0;
         visibility:hidden;
         }
@@ -12,11 +13,12 @@
         .cloakroom .cloakroom--show,
         .white .white--show,
         .brown .brown--show,
-        .rest .rest--show {
+        .rest .rest--show,
+        .mirror .mirror--show {
         opacity: 1;
         }
         path:not(.no-animate) {
-        transition: all .2s linear;
+        transition: opacity .2s linear, transform .5s ease-out;
         }
         .svg.brown .brown--show-05 {
         opacity: 0.05;
@@ -27,7 +29,8 @@
         .svg.brown .brown--show-15 {
         opacity: 0.15;
         }
-        .svg.brown .brown--show-4 {
+        .svg.brown .brown--show-4,
+        .svg.mirror .mirror--show-4{
         opacity: 0.4;
         }
         .svg .opacity1 {
@@ -39,12 +42,21 @@
         .svg .opacity3 {
         opacity: 0.3;
         }
+        .svg.mirror .mirror1 {
+        transform: translate(-10px, 10px);
+        }
+        .svg.mirror .mirror2 {
+        transform: translate(-10px, -10px);
+        }
+        .svg.mirror .mirror3 {
+        transform: translate(10px, 10px);
+        }
     </style>
     <!--Тень - START-->
     <path opacity="0"
           d="M654 224L1317 712L1297 724.088L1116 702.544L594 317L654 224Z"
           fill="url(#paint11_linear)"
-          class="cloakroom--show white--show brown--hide opacity2 no-animate"
+          class="cloakroom--show white--show brown--hide opacity2 no-animate mirror--hide"
     />
     <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd"
           d="M786 1013.5L930 929L953 932L1317 712L654 224L791 912L773 899L616 994L786 1013.5ZM688 978L770 930L874 940L793 989L688 978Z"
@@ -71,7 +83,6 @@
     <path d="M501 0L500 201L154 371L142 167L501 0Z" fill="#DADADA"/>
     <path d="M155 178L166 381L154 371L142 167L155 178Z" fill="#DADADA"/>
     <path d="M702 380L708 221L729 211L722 368L702 380Z" fill="#A19F9F"/>
-    <!--123-->
         <path d="M702 380.033L487 217H480.5L483 22.5L487 16L798 238.68L797 288L708 221L702 380.033Z" fill="url(#paint7_radial)"/>
     <path d="M487 217V16L158 168L169 371L487 217Z" fill="url(#paint1_radial)"/>
     <!--Внутренняя тень-->
@@ -85,7 +96,7 @@
     <path opacity="0.1" fill-rule="evenodd" clip-rule="evenodd"
           d="M487 16L545 261L303.117 380.332L315.099 391.005L166.659 464.323L677 936L586 958.941L496 884L611.165 897.552L547.5 837L426.5 822L367 768L488 782.5L427.619 724.816L303 709.5L288 697.5L412.5 712.5L355.5 659.417L229 643L170.5 590.432L301 607L247.5 556.562L115.5 541L99 526.5L226.5 542L159 476L24 459.5L181 382L180.238 365.555L487 217V16ZM82 447L162 407L234 415L154 456L82 447Z"
           fill="#111111"
-          class="white--hide brown--hide no-animate cloakroom--hide"
+          class="white--hide brown--hide no-animate cloakroom--hide mirror--hide"
     />
     <path opacity="0.3" d="M353 556L360 512L517.5 529L545 552L509 573L353 556Z" fill="url(#paint2_radial)"/>
     <!--Колонна - START-->
@@ -96,8 +107,10 @@
         <path d="M357 309L320 327L348 351L386 331L357 309Z" fill="#F0F0F0"/>
     </g>
     <!--Колонна - END-->
+    <path d="M659 348.046L663 227L506 114V231L659 348.046Z" fill="#FF7F7F" opacity="0" class="mirror--show mirror1"/>
+    <path d="M690 483L471 602.19V512.19L693 389L690 483Z" fill="#FF7F7F" opacity="0" class="mirror--show mirror2"/>
     <!--Центральная стена - START-->
-    <g class="brown--show-4">
+    <g class="brown--show-4 mirror--show-4">
         <path opacity="0.1"
               d="M429.5 723L301 709.5L323.5 697.5V697L397.646 705L542 628.5L465.175 620.343L719 482.5L800 491.073L850.5 464L878.5 485L429.5 723Z"
               fill="#111111"/>
@@ -137,7 +150,7 @@
           d="M878.5 513.32L888.5 366.32L933.5 556.32L910.5 571.32L797 559.32L815.5 549.32L815.586 547.621L883.75 554.945L910.5 538.695L900.125 495.57L898.473 529.272L856.5 525.32L878.5 513.32Z"
           fill="#111111"/>
     <path opacity="0" d="M1151 771.68L1040.5 759.18L915 660.68H1021L1158 768.68L1151 771.68Z"
-          fill="url(#paint15_linear)" class="cloakroom--hide brown--hide opacity2 no-animate"/>
+          fill="url(#paint15_linear)" class="cloakroom--hide brown--hide opacity2 no-animate mirror--hide"/>
     <path d="M711.5 341L705 488L748.5 521L753.5 418L793.5 448L788.5 553L1046.5 755.5L1063.5 606.5L711.5 341Z"
           fill="#DADADA"
           class="cloakroom--hide brown--hide"
@@ -180,7 +193,8 @@
           class="cloakroom--hide white--hide"
     />
     <!--Колонна - START-->
-    <g class="brown--show-4">
+    <path d="M697 490L478 609.19V519.19L700 396L697 490Z" fill="#FF7F7F" opacity="0" class="mirror--show mirror3"/>
+    <g class="brown--show-4 mirror--show-4">
         <path opacity="0.3" d="M555 728L562 684L719.5 701L747 724L711 745L555 728Z" fill="url(#paint12_radial)"/>
         <path d="M528 496L559 522L555 728L525 702L528 496Z" fill="url(#paint13_linear)"/>
         <path d="M596 501L559 522L555 728L592 708L596 501Z" fill="url(#paint14_linear)"/>
@@ -214,7 +228,7 @@
                 d="M771.5 894.5L773 899L616 994L786 1013.5L953 915L771.5 894.5ZM688 978L770 930L874 940L793 989L688 978Z"
                 fill="url(#paint12_linear)"
                 opacity="0"
-                class="cloakroom--show brown--hide opacity3 no-animate"
+                class="cloakroom--show brown--hide opacity3 no-animate mirror--hide"
         />
         <g filter="url(#filter3_i)" class="white--hide brown--hide">
             <path d="M597 920L588 926L517 863L526 857L597 920Z" fill="#AFB1B2"/>
