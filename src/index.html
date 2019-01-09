@@ -5,28 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>TIMESTUDIO | Аренда помещений</title>
     <!--Мета теги-->
-    <meta name="canonical" content="http://timestudio.by/" />
-    <meta name="description" content="Аренда помещений в центре Минска." />
-    <meta name="keywords" content="аренда зала, аренда помещения, аренда для танцев, аренда для йоги" />
-    <meta name="author" content="Мария Клонова" />
-    <meta name="language" content="ru" />
-    <meta name="copyright" content="© 2019 TIMESTUDIO" />
-    <meta name="robots" content="All" />
+    <meta name="canonical" content="http://timestudio.by/"/>
+    <meta name="description" content="Аренда помещений в центре Минска."/>
+    <meta name="keywords" content="аренда зала, аренда помещения, аренда для танцев, аренда для йоги"/>
+    <meta name="author" content="Мария Клонова"/>
+    <meta name="language" content="ru"/>
+    <meta name="copyright" content="© 2019 TIMESTUDIO"/>
+    <meta name="robots" content="All"/>
+    <style>
+        .no-scroll {
+            overflow: paged-y;
+            height: 100% !important
+        }
+
+        .preloader {
+            position: fixed;
+            z-index: 5;
+            top: 0;
+            left: 0;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: 1s linear;
+            transition: 1s linear;
+            opacity: 1;
+            background-color: #fff;
+            justify-content: center;
+            align-items: center
+        }
+
+        .preloader.-type-disable {
+            visibility: hidden;
+            opacity: 0
+        }
+
+        .preloader__item {
+            position: absolute;
+            top: calc(50vh - 10px);
+            left: calc(50% - 10px);
+            display: block;
+            width: 20px;
+            height: 20px;
+            -webkit-animation-name: preload-animation;
+            animation-name: preload-animation;
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+            opacity: .5;
+            border-radius: 50%
+        }
+
+        .preloader__item.red {
+            background-color: #ff8438
+        }
+
+        .preloader__item.green {
+            -webkit-animation-delay: .5s;
+            animation-delay: .5s;
+            background-color: #92ff44
+        }
+
+        .preloader__item.blue {
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+            background-color: #58fffc
+        }
+
+        @-webkit-keyframes preload-animation {
+            0% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+            to {
+                -webkit-transform: scale(4);
+                transform: scale(4)
+            }
+        }
+
+        @keyframes preload-animation {
+            0% {
+                -webkit-transform: scale(1);
+                transform: scale(1)
+            }
+            to {
+                -webkit-transform: scale(4);
+                transform: scale(4)
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="no-scroll">
+<script>
+  window.onload = () => {
+    const preloader = document.querySelector('.preloader');
+    setTimeout(requestAnimationFrame(() => {
+      preloader.classList.add('-type-disable');
+      document.body.classList.remove('no-scroll');
+    }, 1000));
+  };
+
+</script>
+<div class="preloader">
+    <div class="preloader__inner">
+        <span class="preloader__item red"></span>
+        <span class="preloader__item green"></span>
+        <span class="preloader__item blue"></span>
+    </div>
+</div>
 <header class="header">
     <div class="header__inner">
         <div class="header__top">
             <div class="logo">
                 <img src="img/logo.svg" alt="timestudio" width="160" height="22">
             </div>
-            <nav class="nav__wrapper">
+<!--            <nav class="nav__wrapper">
                 <ul class="nav">
                     <li class="nav__item"><a href="#" class="nav__link">Предложение</a></li>
                     <li class="nav__item"><a href="#" class="nav__link">Галерея</a></li>
                     <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
                 </ul>
-            </nav>
+            </nav>-->
             <div class="phone">
                 <a href="tel:+375296383575" title="Наш номер телефона">+375 29 638 35 75</a>
             </div>
@@ -38,7 +141,8 @@
                    title="Наш Вконтакте"><span class="visually-hidden">Наша группа в ВК</span>
                     <svg>
                         <use href="img/sprites.svg#vkontakte"></use>
-                    </svg></a>
+                    </svg>
+                </a>
                 <a class="social__link facebook"
                    href="https://www.facebook.com/klonova.dance/"
                    target="_blank"
@@ -47,7 +151,8 @@
                     <span class="visually-hidden">Наша страница на Facebook</span>
                     <svg>
                         <use href="img/sprites.svg#facebook"></use>
-                    </svg></a>
+                    </svg>
+                </a>
                 <a class="social__link instagram"
                    href="https://www.instagram.com/dance_studio_minsk/"
                    target="_blank"
@@ -56,7 +161,8 @@
                     <span class="visually-hidden">Наша страница в Instagram</span>
                     <svg>
                         <use href="img/sprites.svg#instagram"></use>
-                    </svg></a>
+                    </svg>
+                </a>
             </div>
         </div>
         <div class="header__content">
@@ -77,15 +183,19 @@
                 <p>Два просторных зала с высокими потолками. Приятное
                     естественное освещение днем и отличное искусственное
                     вечером</p>
-                <p>Светлый и легкий <span class="text-marked" data-name="white">Карибы</span> отлично подойдет для занятий
+                <p>Светлый и легкий <span class="text-marked" data-name="white">Карибы</span> отлично подойдет для
+                    занятий
                     йогой, лекций и групповых занятий. 
-                    <span class="text-marked" data-name="brown">Капучино</span> готов встретить фотографов и тех кому хочется
+                    <span class="text-marked" data-name="brown">Капучино</span> готов встретить фотографов и тех кому
+                    хочется
                     окунуться в классическую атмосферу.</p>
 
-                <p>В каждом зале висят <span class="text-marked" data-name="mirror">зеркала</span> для занятий спортом, стоят
+                <p>В каждом зале висят <span class="text-marked" data-name="mirror">зеркала</span> для занятий спортом,
+                    стоят
                     кулеры для воды и есть зоны отдыха где можно
                     расслабиться после утомительной тренировки.</p>
-                <p>Отдельные <span class="text-marked" data-name="cloakroom">раздевалки</span>, оборудованные зеркалами, позволят
+                <p>Отдельные <span class="text-marked" data-name="cloakroom">раздевалки</span>, оборудованные зеркалами,
+                    позволят
                     спокойно подготовиться к началу мероприятия, а после
                     неспешно собраться.</p>
             </div>
@@ -101,19 +211,27 @@
             <h2>Галерея</h2>
             <div class="item--medium">
                 <div class="slick-brown">
-                    <img src="img/brown-1@2x-min.jpg" srcset="img/brown1-min.jpg 1x, img/brown1@2x-min.jpg 2x" />
-                    <img data-sizes="auto" data-src="img/brown-2@2x-min.jpg" data-srcset="img/brown2-min.jpg 1x, img/brown2@2x-min.jpg 2x" class="lazyload" />
-                    <img data-sizes="auto" data-src="img/brown-3@2x-min.jpg" data-srcset="img/brown3-min.jpg 1x, img/brown3@2x-min.jpg 2x" class="lazyload" />
-                    <img data-sizes="auto" data-src="img/brown-4@2x-min.jpg" data-srcset="img/brown4-min.jpg 1x, img/brown4@2x-min.jpg 2x" class="lazyload" />
-                    <img data-sizes="auto" data-src="img/brown-5@2x-min.jpg" data-srcset="img/brown5-min.jpg 1x, img/brown5@2x-min.jpg 2x" class="lazyload" />
+                    <img data-sizes="auto" data-src="img/brown-1@2x-min.jpg"
+                         data-srcset="img/brown1-min.jpg 1x, img/brown1@2x-min.jpg 2x" class="lazyload" alt="коричневый зал" />
+                    <img data-sizes="auto" data-src="img/brown-2@2x-min.jpg"
+                         data-srcset="img/brown2-min.jpg 1x, img/brown2@2x-min.jpg 2x" class="lazyload" alt="коричневый зал" />
+                    <img data-sizes="auto" data-src="img/brown-3@2x-min.jpg"
+                         data-srcset="img/brown3-min.jpg 1x, img/brown3@2x-min.jpg 2x" class="lazyload" alt="коричневый зал" />
+                    <img data-sizes="auto" data-src="img/brown-4@2x-min.jpg"
+                         data-srcset="img/brown4-min.jpg 1x, img/brown4@2x-min.jpg 2x" class="lazyload" alt="коричневый зал" />
+                    <img data-sizes="auto" data-src="img/brown-5@2x-min.jpg"
+                         data-srcset="img/brown5-min.jpg 1x, img/brown5@2x-min.jpg 2x" class="lazyload" alt="коричневый зал" />
                 </div>
                 <span>Капучино</span>
             </div>
             <div class="item--medium">
                 <div class="slick-white">
-                    <img src="img/white-2@2x-min.jpg" srcset="img/white2-min.jpg 1x, img/white2@2x-min.jpg 2x" />
-                    <img data-sizes="auto" data-src="img/white-1@2x-min.jpg" data-srcset="img/white1-min.jpg 1x, img/white1@2x-min.jpg 2x" class="lazyload" />
-                    <img data-sizes="auto" data-src="img/white-3@2x-min.jpg" data-srcset="img/white3-min.jpg 1x, img/white3@2x-min.jpg 2x" class="lazyload" />
+                    <img data-sizes="auto" data-src="img/white-2@2x-min.jpg"
+                         data-srcset="img/white2-min.jpg 1x, img/white2@2x-min.jpg 2x" class="lazyload" alt="белый зал" />
+                    <img data-sizes="auto" data-src="img/white-1@2x-min.jpg"
+                         data-srcset="img/white1-min.jpg 1x, img/white1@2x-min.jpg 2x" class="lazyload" alt="белый зал" />
+                    <img data-sizes="auto" data-src="img/white-3@2x-min.jpg"
+                         data-srcset="img/white3-min.jpg 1x, img/white3@2x-min.jpg 2x" class="lazyload" alt="белый зал" />
                 </div>
                 <span>Карибы</span>
             </div>
@@ -122,7 +240,7 @@
                         data-sizes="auto"
                         data-src="img/razdevalka1@2x.jpg"
                         data-srcset="img/razdevalka1.jpg 1x, img/razdevalka1@2x.jpg 2x"
-                        class="lazyload" />
+                        class="lazyload" alt="первая раздевалка"/>
                 <span>Раздевалка 1</span>
             </div>
             <div class="item--small">
@@ -130,14 +248,14 @@
                         data-sizes="auto"
                         data-src="img/razdevalka1@2x.jpg"
                         data-srcset="img/razdevalka1.jpg 1x, img/razdevalka1@2x.jpg 2x"
-                        class="lazyload" />
+                        class="lazyload" alt="вторая раздевалка"/>
                 <span>Раздевалка 2</span>
             </div>
             <div class="item--small">
                 <img
                         data-sizes="auto"
                         data-src="img/collection.jpg"
-                        class="lazyload" />
+                        class="lazyload" alt="реквизит"/>
                 <span>Реквизит</span>
             </div>
         </div>
@@ -146,7 +264,8 @@
         <div class="discounts__inner">
             <div class="discounts__text">
                 <h2>Система лояльности</h2>
-                <p>Для постоянных клиентов у нас действует гибкая система скидок на аренду и реквизит, бонусы и другие выгодные предложения.</p>
+                <p>Для постоянных клиентов у нас действует гибкая система скидок на аренду и реквизит, бонусы и другие
+                    выгодные предложения.</p>
             </div>
             <div class="discounts__image">
                 <img data-src="img/cards.png"
@@ -186,8 +305,8 @@
                 </ul>
             </div>
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2349.17822526346!2d27.624331271163943!3d53.92857745178947!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbd06b0c882d71dbd!2z0KLQsNC90YbQtdCy0LDQu9GM0L3QsNGPINGB0YLRg9C00LjRjyDQnNCw0YDQuNC4INCa0LvQvtC90L7QstC-0Lk!5e0!3m2!1sru!2sby!4v1547031239807" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-<!--                <a href="#" class="button button&#45;&#45;primary button&#45;&#45;gallery">Проложить маршрут<span></span></a>-->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2349.17822526346!2d27.624331271163943!3d53.92857745178947!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xbd06b0c882d71dbd!2z0KLQsNC90YbQtdCy0LDQu9GM0L3QsNGPINGB0YLRg9C00LjRjyDQnNCw0YDQuNC4INCa0LvQvtC90L7QstC-0Lk!5e0!3m2!1sru!2sby!4v1547031239807" frameborder="0" style="border:0" allowfullscreen title="Расположение на карте"></iframe>
+                <!--                <a href="#" class="button button&#45;&#45;primary button&#45;&#45;gallery">Проложить маршрут<span></span></a>-->
             </div>
         </div>
     </section>
@@ -198,13 +317,13 @@
             <div class="logo">
                 <img src="img/logo.svg" alt="timestudio" width="160" height="22">
             </div>
-            <nav class="nav__wrapper">
+<!--            <nav class="nav__wrapper">
                 <ul class="nav">
                     <li class="nav__item"><a href="#" class="nav__link">Предложение</a></li>
                     <li class="nav__item"><a href="#" class="nav__link">Галерея</a></li>
                     <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
                 </ul>
-            </nav>
+            </nav>-->
             <div class="phone">
                 <a href="tel:+375296383575" title="Наш номер телефона">+375 29 638 35 75</a>
             </div>
@@ -216,7 +335,8 @@
                    title="Наш Вконтакте"><span class="visually-hidden">Наша группа в ВК</span>
                     <svg>
                         <use href="img/sprites.svg#vkontakte"></use>
-                    </svg></a>
+                    </svg>
+                </a>
                 <a class="social__link facebook"
                    href="https://www.facebook.com/klonova.dance/"
                    target="_blank"
@@ -225,7 +345,8 @@
                     <span class="visually-hidden">Наша страница на Facebook</span>
                     <svg>
                         <use href="img/sprites.svg#facebook"></use>
-                    </svg></a>
+                    </svg>
+                </a>
                 <a class="social__link instagram"
                    href="https://www.instagram.com/dance_studio_minsk/"
                    target="_blank"
@@ -234,7 +355,8 @@
                     <span class="visually-hidden">Наша страница в Instagram</span>
                     <svg>
                         <use href="img/sprites.svg#instagram"></use>
-                    </svg></a>
+                    </svg>
+                </a>
             </div>
         </div>
         <span class="footer__copyright">© TIMESTUDIO, 2017−2019</span>

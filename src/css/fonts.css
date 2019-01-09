@@ -4,6 +4,21 @@
     font-weight: 300;
   } */
 
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local(Roboto), local(Roboto-Regular), url(../fonts/KFOmCnqEu92Fr1Mu4mxO.eot#) format("eot"), url(../fonts/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2"), url(../fonts/KFOmCnqEu92Fr1Mu4mxM.woff) format("woff")
+}
+
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    src: local("Roboto Medium"), local(Roboto-Medium), url(../fonts/KFOlCnqEu92Fr1MmEU9fBBc8.eot#) format("eot"), url(../fonts/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2"), url(../fonts/KFOlCnqEu92Fr1MmEU9fBBc-.woff) format("woff")
+}
+
 body {
     font-family: 'Roboto', system-ui;
     font-smoothing: antialiased;

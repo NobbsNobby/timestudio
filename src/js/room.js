@@ -1,5 +1,5 @@
 export default function svgRoom() {
-  if(window.innerWidth > 600) {
+  if(window.innerWidth > 700) {
     const buttons = document.querySelector('.-js-room-text');
     const obj = document.querySelector('.-js-room');
 

@@ -5,6 +5,7 @@ import lazySizes from 'lazysizes';
 import svgRoom from './room';
 import $ from 'jquery';
 import slick from 'slick-carousel/slick/slick';
+import './scroll';
 
 
 lazySizes.init();
