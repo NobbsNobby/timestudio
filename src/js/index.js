@@ -8,7 +8,7 @@ import svgRoom from './room';
 import './scroll';
 import './form';
 
-// ! arr
+// arr
 lazySizes.init();
 svgRoom();
 
