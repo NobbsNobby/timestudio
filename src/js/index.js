@@ -6,8 +6,9 @@ import svgRoom from './room';
 import $ from 'jquery';
 import slick from 'slick-carousel/slick/slick';
 import './scroll';
+import './form';
 
-
+// ! arr
 lazySizes.init();
 svgRoom();
 
